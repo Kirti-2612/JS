@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Restuarent Billing</title>
+<style type="text/css">
+body
+{
+    text-align: center;
+}
+#box1
+{
+width: 35%;
+height: 35rem;
+background-color: peru;
+margin:auto;
+font-size: 20px;
+border-radius: 5px;
+/* margin-top: 2rem; */
+}
+
+input[type="text"]
+{
+    font-size: 24px;
+}
+input[type="number"]
+{
+    font-size: 24px;
+}
+h1
+{
+    color: white;
+    text-decoration: underline;
+    padding-top: 1rem;
+}
+button
+{
+    font-size: 25px;
+}
+tr
+{
+    font-size: 35px;
+}
+td
+{
+text-align: center;
+padding:2px; 
+}
+</style>
+<script>
+    let P1,P2,P3,P4;
+
+function qtyP()
+{
+     let A = document.getElementById("T1").value;
+     let P1 = 100 * parseInt(A); 
+     document.getElementById("T5").value = P1;
+     return P1;  
+     
+}
+function qtyV()
+{
+     let B = document.getElementById("T2").value; 
+     let P2 = 50 * parseInt(B);  
+     document.getElementById("T6").value = P2;
+     return P2;   
+}
+function qtyS()
+{
+
+     let C = document.getElementById("T3").value; 
+     let P3 = 70 * parseInt(C);  
+     document.getElementById("T7").value = P3;
+     return P3;    
+}
+function qtyB()
+{
+     let D = document.getElementById("T4").value; 
+     let P4 = 40 * parseInt(D);  
+     document.getElementById("T8").value = P4;
+     return P4;    
+}
+function TotalBill(P1,P2,P3,P4)
+{
+    let A = parseInt(P1);
+    let B = parseInt(P2);
+    let C = parseInt(P3);
+    let D = parseInt(P4);
+
+    let total = parseInt(A + B + C + D);
+    document.getElementById("T9").value=total;
+}
+function FunGST()
+{
+    let D = document.getElementById("T9").value; 
+
+    let amount = parseInt(D);
+    let E = document.getElementById("T10").value; 
+    let per = parseInt(E);
+    let total = amount + (amount * per / 100);
+
+    document.getElementById("T11").value = total; 
+    
+}
+
+</script>
+</head>
+<body>   
+    <div id="box1">
+        <h1>Restaurent Billing System</h1>
+        <table border="1" align="center">
+        <tr style="background-color:crimson;">
+        <td style="color:aliceblue; text-decoration: underline"><label >Items</label></td>
+        <td style="color:aliceblue; text-decoration: underline"><label >Qty</label></td>
+        <td style="color:aliceblue; text-decoration: underline;"><label >Price</label></td>
+        </tr>
+
+        <tr>
+        <td><label for="T1">Pizza</label></td>
+        <td><input type="number" id="T1" size="5" min="1" max="50" onchange="qtyP()"></td>
+        <td><input type="text" id="T5" size="8"></td> <tr>
+        <td><label for="T2">Vada Pav</label></td>
+        <td><input type="number" id="T2" size="5" min="1" max="50" onchange="qtyV()"></td>
+        <td><input type="text" id="T6" size="8"></td>
+        </tr>
+        <tr>
+        <td><label for="T3">Sandwich</label></td>
+        <td><input type="number" id="T3" size="5" min="1" max="50" onchange="qtyS()"></td>
+        <td><input type="text" id="T7" size="8"></td>
+        </tr>
+        <tr>
+        <td><label for="T4">Burger</label></td>
+        <td><input type="number" id="T4" size="5" min="1" max="50" onchange="qtyB()"></td>
+        <td><input type="text" id="T8"size="8"></td>
+        </tr>
+        <!-- <tr><td style="color: aliceblue;" colspan="3">-------------------------------------------------</td></tr>    -->
+        <tr>
+        <td colspan="2"><label for="T9">Total Bill</label></td>
+        <td><input type="text" id="T9"size="8" onclick="TotalBill(qtyP(),qtyV(),qtyS(),qtyB())"></td>
+        </tr>
+        <tr> 
+        <td colspan="2"><label for="GST">GST:</label>
+       <td><select id="T10" onchange="FunGST()" style="font-size: 22px; padding-left: 15px; padding-right: 10px;">
+        <option value="8">8</option>
+        <option value="15">15</option></td>
+       </select>
+        </tr>
+        <tr>
+        <td colspan="2"><label>Total Bill with GST</label></td>
+        <td><input type="text" id="T11"size="8"></td>
+        </tr>
+        </table>
+
+    </div>
+</body>
+</html>
