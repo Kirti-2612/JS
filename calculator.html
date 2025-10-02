@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>calculator</title>
+
+
+<!-------- JAVA SCRIPT CODE -------->
+
+<style type="text/css">
+.Box1{
+background-color: teal;
+    width: 25%;
+    height: 32rem;
+    margin: auto;
+}
+.Box2
+{
+    width: 70%;
+    height: 20rem;
+    margin-left:4.5rem;
+    padding:2px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    border-radius: 3px;
+}
+button
+{
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 12px 20px 10px 20px;
+    border-radius: 5px;
+    border-color: chocolate;
+}
+h1
+{
+    text-align: center;
+    text-decoration-line: underline;
+    font-size: 40px;
+    color: rgb(56, 55, 55);
+}
+
+input[type="text"]
+{
+    width: 90%;
+    height:3rem;
+    text-align: right;
+    margin: 1rem;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+    border: none;
+    border-radius: 5px;
+    
+}
+#back
+{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-top:1rem;
+    margin-left:5.2rem;  
+}
+</style> 
+<script>
+    let G1, G2, G3, C1, C2, C3, C4;
+
+function funB1(a)
+ {
+     let one = document.getElementById("T1").value;
+    one = one + a;
+     document.getElementById("T1").value = one;
+ }
+
+// function funB2()
+// {
+//     let two = document.getElementById("T1").value;
+//     two = two + "2";
+//     document.getElementById("T1").value = two;
+// }
+
+function funOp(b)
+{
+    G1 = document.getElementById("T1").value;
+    document.getElementById("T1").value = "";
+    C1 = b;
+}
+function funB11()
+{
+    document.getElementById("T1").value="";
+    
+}
+function funB12()
+{   
+    G2 = document.getElementById("T1").value;
+    if(C1==1)
+    {
+      G3 = parseFloat(G1) + parseFloat(G2);
+    }
+    else if(C1==2)
+    {
+      G3 = parseFloat(G1) - parseFloat(G2);
+    }
+    else if(C1==3) 
+    {
+       G3 = parseFloat(G1) * parseFloat(G2);
+    }
+    else if(C1==4)
+    {
+       G3 = parseFloat(G1) / parseFloat(G2);
+    }
+document.getElementById("T1").value = G3;
+}
+
+function funback()
+{
+    let back = document.getElementById("T1").value;
+    back = parseInt(back);
+    back = parseInt(back/10);
+    document.getElementById("T1").value=back;
+}   
+
+</script>
+</head>
+<body>
+<h1>My Calculator</h1>  
+<div class="Box1">
+<input type="text" placeholder="0" id="T1">
+<div class="Box2">
+            <button type="button" onclick="funB1('7')">7</button>
+            <button type="button" onclick="funB1('8')">8</button>
+            <button type="button" onclick="funB1('9')">9</button>
+            <button type="button" onclick="funOp('4')">/</button>
+            
+            <button type="button" onclick="funB1('4')">4</button>
+            <button type="button" onclick="funB1('5')">5</button>
+            <button type="button" onclick="funB1('6')">6</button>
+            <button type="button" onclick="funOp('3')">x</button>
+            
+            <button type="button" onclick="funB1('1')">1</button>
+            <button type="button" onclick="funB1('2')">2</button>
+            <button type="button" onclick="funB1('3')">3</button>
+            <button type="button" onclick="funOp('2')">-</button>
+
+            <button type="button" onclick="funB1('0')">0</button>
+            <button type="button" onclick="funB11()">C</button>
+            <button type="button" onclick="funB12()">=</button>
+            <button type="button" onclick="funOp('1')">+</button>
+            </div>    
+      
+<button type="button" id="back" onclick="funback()">Backspace</button>
+
+</div>
+</body>
+</html>
