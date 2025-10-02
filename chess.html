@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang = "en">
+<head>
+<title>Chess Board</title> 
+<style type="text/css">
+body
+{
+    text-align: center;
+    background-color: aliceblue;
+}
+#box1
+{
+    width: 28%;
+    height: 28rem;
+    background-color:rgb(110, 55, 15);
+    margin:auto;
+    margin-left:42rem;
+    border-radius: 5px;
+    border: 5px solid wheat;
+
+}
+h1
+{
+    font-size: 40px;
+    text-decoration: underline;
+    color: rgb(66, 66, 66);
+}
+table
+{
+  margin: auto;
+  margin-top:2.5rem;
+  padding: 0px;
+}
+tr
+{
+    font-size: 35px;
+       
+}
+td
+{
+padding:0px; 
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+<h1>Chess Board</h1>
+<div id = "box1">
+    <table width="60" bordercolor="black" cellspacing="0">
+    <script>
+    for (let i = 1; i <= 8; i++)
+    {
+         document.write("<tr"); 
+        for(let j = 1; j <= 8; j++)
+        {
+            if((i+j)%2==0)
+            {
+            document.write("<td  bgcolor= \"white\"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>");
+            }
+            else
+            {
+               document.write("<td  bgcolor=\"black\"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>");  
+            }
+        }
+        document.write("</tr>"); 
+        }
+
+    
+    </script>
+    </table>
+        
+</div>
