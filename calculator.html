@@ -3,8 +3,7 @@
 <head>
 <title>calculator</title>
 
-
-<!-------- JAVA SCRIPT CODE -------->
+<!-------- CSS CODE -------->
 
 <style type="text/css">
 .Box1{
@@ -60,8 +59,11 @@ input[type="text"]
     margin-left:5.2rem;  
 }
 </style> 
+
+<!-------- Java Script CODE -------->
+
 <script>
-    let G1, G2, G3, C1, C2, C3, C4;
+let G1, G2, G3, C1, C2, C3, C4;
 
 function funB1(a)
  {
@@ -69,26 +71,18 @@ function funB1(a)
     one = one + a;
      document.getElementById("T1").value = one;
  }
-
-// function funB2()
-// {
-//     let two = document.getElementById("T1").value;
-//     two = two + "2";
-//     document.getElementById("T1").value = two;
-// }
-
 function funOp(b)
 {
     G1 = document.getElementById("T1").value;
     document.getElementById("T1").value = "";
     C1 = b;
 }
-function funB11()
+function funCL()
 {
     document.getElementById("T1").value="";
     
 }
-function funB12()
+function funEQ()
 {   
     G2 = document.getElementById("T1").value;
     if(C1==1)
@@ -141,8 +135,8 @@ function funback()
             <button type="button" onclick="funOp('2')">-</button>
 
             <button type="button" onclick="funB1('0')">0</button>
-            <button type="button" onclick="funB11()">C</button>
-            <button type="button" onclick="funB12()">=</button>
+            <button type="button" onclick="funCL()">C</button>
+            <button type="button" onclick="funEQ()">=</button>
             <button type="button" onclick="funOp('1')">+</button>
             </div>    
       
@@ -151,3 +145,4 @@ function funback()
 </div>
 </body>
 </html>
+
